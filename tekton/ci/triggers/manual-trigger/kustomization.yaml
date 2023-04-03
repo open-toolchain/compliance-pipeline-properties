@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:
+  devops.cloud.ibm.com/cd: kustomize
+generatorOptions:
+  disableNameSuffixHash: true
+resources:
+  - manual-trigger-listener.yaml
+  - manual-trigger-binding.yaml
+configMapGenerator:
+  - name: manual-trigger-props
+    envs:
+      - manual-trigger-props.env

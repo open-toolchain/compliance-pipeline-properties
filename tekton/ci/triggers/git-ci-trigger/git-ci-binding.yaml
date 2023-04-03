@@ -1,0 +1,8 @@
+apiVersion: triggers.tekton.dev/v1beta1
+kind: TriggerBinding
+metadata:
+  name: git-ci-binding
+spec:
+  params:
+  - name: merge-environment-properties
+    value: git-trigger-props
